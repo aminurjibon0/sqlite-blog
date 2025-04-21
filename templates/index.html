@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>SQLite Blog</title></head>
+<body>
+    <h1>Create a Post</h1>
+    <form method="POST">
+        <input name="title" placeholder="Title" required><br>
+        <textarea name="content" placeholder="Write something..." required></textarea><br>
+        <button type="submit">Post</button>
+    </form>
+
+    <hr>
+    <h2>All Posts</h2>
+    {% for post in posts %}
+        <div>
+            <h3>{{ post[1] }}</h3>  <!-- title -->
+            <p>{{ post[2] }}</p>    <!-- content -->
+            <small>Posted on {{ post[3] }}</small>  <!-- timestamp -->
+            <a href="/edit/{{ post['id'] }}">Edit</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

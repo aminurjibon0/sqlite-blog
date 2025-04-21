@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Post</title></head>
+<body>
+    <h1>Edit Post</h1>
+    <form method="POST">
+        <input name="title" value="{{ post['title'] }}" required><br>
+        <textarea name="content" required>{{ post['content'] }}</textarea><br>
+        <button type="submit">Update</button>
+        <a href="/">Cancel</a>
+    </form>
+</body>
+</html>
